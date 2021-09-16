@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/secondToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_arrow_back"
+                android:contentDescription="@string/back_button_for_profile_activity" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_options"
+                android:contentDescription="@string/opt_button_for_profile_activity" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="50dp"
+        android:transitionName="Container"
+        android:background="@drawable/profile_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/firstIndexText"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="@string/a"
+        android:transitionName="sharedAnim"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:paddingTop="35dp"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@id/view"/>
+
+    <TextView
+        android:id="@+id/bigName"
+        android:layout_width="0dp"
+        android:transitionName="Name"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="24sp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/callHolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/grey"
+        android:id="@+id/callHolder"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/callBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_outline_phone_24"
+                android:contentDescription="@string/call_button" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/call"
+                android:fontFamily="@font/montserrat"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/callBtn"
+                app:layout_constraintStart_toStartOf="@id/callBtn"
+                app:layout_constraintEnd_toEndOf="@id/callBtn"/>
+
+            <ImageButton
+                android:id="@+id/shareBtn"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="60dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_share_24"
+                android:contentDescription="@string/share_button" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/share"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/shareBtn"
+                app:layout_constraintStart_toStartOf="@id/shareBtn"
+                app:layout_constraintEnd_toEndOf="@id/shareBtn"/>
+
+            <ImageButton
+                android:id="@+id/msgBtn"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/shareBtn"
+                app:layout_constraintEnd_toStartOf="@+id/shareBtn"
+                app:layout_constraintStart_toEndOf="@+id/callBtn"
+                app:layout_constraintTop_toTopOf="@+id/callBtn"
+                app:srcCompat="@drawable/ic_outline_message_24"
+                android:contentDescription="@string/message_button" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/message"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/msgBtn"
+                app:layout_constraintStart_toStartOf="@id/msgBtn"
+                app:layout_constraintEnd_toEndOf="@id/msgBtn"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/numberTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:text="@string/number"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout2"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayout2"
+            android:layout_marginEnd="20dp"
+            app:srcCompat = "@drawable/ic_outline_delete_forever_24"
+            android:background="@color/white"
+            android:contentDescription="@string/delete_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/editBtn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/activity2_floatbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_outline_edit_24"
+        android:contentDescription="@string/edit_button" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
